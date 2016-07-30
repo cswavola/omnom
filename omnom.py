@@ -67,6 +67,7 @@ def print_recipe(r):
     print r.instructions
     return
 
+'''
 while True:
     action = top_menu()
 
@@ -81,4 +82,39 @@ while True:
     else:
         print "Invalid command. Please enter another."
         continue
+'''
+import Tkinter as tk
 
+root = tk.Tk()
+root.title("omnom")
+
+mainframe = tk.Frame(root, bd = 10)
+mainframe.pack()
+
+recipelistbox = tk.Listbox(mainframe)
+i = 0
+recipelistbox.insert(i, "New Recipe")
+for r in recipes:
+    i += 1
+    recipelistbox.insert(i, r.name)
+recipelistbox.pack(side = "left")
+
+
+recipeframe = tk.Frame(mainframe)
+recipeframe.pack(side = "right")
+
+L1 = tk.Label(recipeframe, text = gc.name)
+L1.pack()
+L2 = tk.Label(recipeframe, text = gc.ingredients)
+L2.pack()
+L3 = tk.Label(recipeframe, text = gc.instructions)
+L3.pack()
+
+def save_callback():
+    return
+
+savebutton = tk.Button(recipeframe, text = "Save", command = save_callback)
+savebutton.pack()
+
+
+root.mainloop()
