@@ -5,13 +5,22 @@ class Recipe:
     instructions = ""
     name = ""
 
+class TestRecipe:
+    ingredients={}
+    instructions = []
+    dietary=""
+    name = ""
+
     '''
     def print(self):
         return
     '''
+#conversion library, fluids in terms of 1 ml
+unitFl={"cup":225,"pint":450,"quart":1000,"gallon":4000,"Tbs":15,"tsp":5}
 
 recipes = []
 
+#hey, would the .ingredients work as a dictionary? key is the ingredient, value is the amount?
 # grilled cheese
 gc = Recipe()
 gc.ingredients = ['bread', 'cheese', 'butter']
@@ -25,7 +34,11 @@ fe.name = "Fried egg"
 fe.instructions = "Cook egg in butter over medium heat."
 recipes.append(fe)
 
-
+cf=TestRescipe()
+cf.ingredients = {'grounds':'2 cups','water':'6 cups', 'cream':'1 Tbs'}
+cf.name="Cold brew Coffee"
+cf.instrustions = 'Put the coffee + water in the thing. stop for 12 hours. take the stuff out of the thing. Add cream."
+cf.dietary = "vegetarian"
 
 print "Welcome to omnom!"
 
